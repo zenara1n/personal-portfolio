@@ -456,18 +456,3 @@ footer p {
 .see-more-link {
   text-align: end;
 }
-
-.back-button {
-  font-size: 1.6rem !important;
-  color: black !important;
-  text-decoration: none !important;
-  margin: 1.5rem !important;
-}
-
-.back-button:hover {
-  color: grey !important;
-  text-decoration: underline !important;
-  text-underline-offset: 1rem !important;
-  text-decoration-color: rgb(181, 181, 181) !important;
-  cursor: pointer !important;
-}

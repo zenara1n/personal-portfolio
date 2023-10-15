@@ -6,164 +6,165 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Projects</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> <!-- Include Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+        .back-button {
+            font-size: 1.4rem !important;
+            color: black !important;
+            text-decoration: none !important;
+            margin: 1.5rem !important;
+            width: 0px !important;
+        }
+
+        .back-button:hover {
+            color: grey !important;
+            text-decoration: underline !important;
+            cursor: pointer !important;
+        }
+
+        .section__text__p1 {
+            text-align: center;
+        }
+
+        .title {
+            font-size: 3rem;
+            text-align: center;
+        }
+
+        /* overlay at start */
+        .mfp-fade.mfp-bg {
+            opacity: 0;
+
+            -webkit-transition: all 0.15s ease-out;
+            -moz-transition: all 0.15s ease-out;
+            transition: all 0.15s ease-out;
+        }
+
+        /* overlay animate in */
+        .mfp-fade.mfp-bg.mfp-ready {
+            opacity: 0.8;
+        }
+
+        /* overlay animate out */
+        .mfp-fade.mfp-bg.mfp-removing {
+            opacity: 0;
+        }
+
+        /* content at start */
+        .mfp-fade.mfp-wrap .mfp-content {
+            opacity: 0;
+
+            -webkit-transition: all 0.15s ease-out;
+            -moz-transition: all 0.15s ease-out;
+            transition: all 0.15s ease-out;
+        }
+
+        /* content animate it */
+        .mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+            opacity: 1;
+        }
+
+        /* content animate out */
+        .mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+            opacity: 0;
+        }
+    </style>
 </head>
 
 <body>
-    <p href="#" class="back-button" onclick="history.back(); return false;"><i class="fas fa-arrow-left"></i></p>
+    <div href="#" class="back-button" onclick="history.back(); return false;"><i class="fas fa-arrow-left"></i></div>
 
-    <section class="section-project" id="projects">
-        <!-- <p class="section__text__p1">Browse My Recent</p> -->
-        <h1 class="title">Projects</h1>
-        <div class="experience-details-container">
-            <div class="about-containers">
-                <div class="details-container color-container">
-                    <div class="article-container">
-                        <img src="./assets/project-1.png" alt="Project 1" class="project-img" />
-                    </div>
-                    <h2 class="experience-sub-title project-title">Project One</h2>
-                    <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">
-                            Github
-                        </button>
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">
-                            Live Demo
-                        </button>
-                    </div>
-                </div>
-                <div class="details-container color-container">
-                    <div class="article-container">
-                        <img src="./assets/papi.png" alt="Project 2" class="project-img" />
-                    </div>
-                    <h2 class="experience-sub-title project-title">Project Two</h2>
-                    <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">
-                            Github
-                        </button>
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">
-                            Live Demo
-                        </button>
-                    </div>
-                </div>
-                <div class="details-container color-container">
-                    <div class="article-container">
-                        <img src="./assets/project-3.png" alt="Project 3" class="project-img" />
-                    </div>
-                    <h2 class="experience-sub-title project-title">Project Three</h2>
-                    <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">
-                            Github
-                        </button>
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">
-                            Live Demo
-                        </button>
-                    </div>
+    <p class="section__text__p1">Recent</p>
+    <h1 class="title mb-4">Projects</h1>
+
+
+    <div class="flex flex-wrap justify-center gap-7" id="projectsContainer"></div>
+
+    <script>
+        var projectsData = [
+            {
+                "name": "Papi Network",
+                "imageURL": "./assets/thumbnails/4478108.jpg",
+                "githubURL": "#",
+                "demoURL": "#",
+                "technologies": ["Java", "Kotlin", "PHP", "MySQL"]
+            }, {
+                "name": "Khaya 265",
+                "imageURL": "./assets/thumbnails/4035050.jpg",
+                "githubURL": "#",
+                "demoURL": "#",
+                "technologies": ["Java", "Firebase"]
+            }, {
+                "name": "Team Force",
+                "imageURL": "./assets/thumbnails/4036137.png",
+                "githubURL": "#",
+                "demoURL": "#",
+                "technologies": ["Java", "Kotlin", "PHP", "Firebase", "MySQL"]
+            }, {
+                "name": "JobsAlert",
+                "imageURL": "./assets/thumbnails/4118616.jpg",
+                "githubURL": "#",
+                "demoURL": "#",
+                "technologies": ["Java", "Kotlin", "PHP", "MySQL"]
+            }, {
+                "name": "Waw Mobile App",
+                "imageURL": "./assets/thumbnails/4478101.jpg",
+                "githubURL": "#",
+                "demoURL": "#",
+                "technologies": ["Java", "PHP", "MySQL"]
+            }
+        ];
+
+        var projectsContainer = document.getElementById("projectsContainer");
+
+        projectsData.forEach(function (project) {
+            var projectElement = document.createElement("div");
+            projectElement.className = "w-80 max-w-md overflow-hidden rounded-3xl border-2 border-[#A3A3A3] bg-[#FAFAFA]";
+            projectElement.innerHTML = `
+            <div class="flex items-center justify-center p-8">
+                <a href="${project.imageURL}" class="project-image-popup">
+
+                <img src="${project.imageURL}" alt="Project Image" class="h-auto rounded-3xl object-cover" />
+            
+                </a>
+            </div>
+            <div class="pb-6 text-center">
+                <h2 class="mb-4 text-2xl font-bold">${project.name}</h2>
+                <div class="flex h-11 justify-center space-x-4">
+                    <a href="${project.githubURL}" class="btn btn-color-2 text-sm font-bold flex w-28 items-center justify-center rounded-full border border-[#A3A3A3] transition duration-300 ease-in-out hover:border-black hover:bg-[#353535] hover:text-white">Github</a>
+                    <a href="${project.demoURL}" class="btn btn-color-2 text-sm font-bold flex w-28 items-center justify-center rounded-full border border-[#A3A3A3] transition duration-300 ease-in-out hover:border-black hover:bg-[#353535] hover:text-white">Live Demo</a>
                 </div>
             </div>
-        </div>
-    </section>
-   
-    <section class="section-project" id="projects">
-        <div class="experience-details-container">
-            <div class="about-containers">
-                <div class="details-container color-container">
-                    <div class="article-container">
-                        <img src="./assets/project-1.png" alt="Project 1" class="project-img" />
-                    </div>
-                    <h2 class="experience-sub-title project-title">Project One</h2>
-                    <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">
-                            Github
-                        </button>
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">
-                            Live Demo
-                        </button>
-                    </div>
-                </div>
-                <div class="details-container color-container">
-                    <div class="article-container">
-                        <img src="./assets/project-2.png" alt="Project 2" class="project-img" />
-                    </div>
-                    <h2 class="experience-sub-title project-title">Project Two</h2>
-                    <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">
-                            Github
-                        </button>
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">
-                            Live Demo
-                        </button>
-                    </div>
-                </div>
-                <div class="details-container color-container">
-                    <div class="article-container">
-                        <img src="./assets/project-3.png" alt="Project 3" class="project-img" />
-                    </div>
-                    <h2 class="experience-sub-title project-title">Project Three</h2>
-                    <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">
-                            Github
-                        </button>
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">
-                            Live Demo
-                        </button>
-                    </div>
-                </div>
+            <div class="mb-6 flex flex-wrap justify-center px-9">
+                ${project.technologies.map(tech => `<div class="mx-2 my-[2px] font-bold flex items-center justify-center rounded-full border bg-[#353535] px-3 py-1 text-[11px] text-white">${tech}</div>`).join('')}
             </div>
-        </div>
-    </section>
-   
-    <section class="section-project" id="projects">
-        <div class="experience-details-container">
-            <div class="about-containers">
-                <div class="details-container color-container">
-                    <div class="article-container">
-                        <img src="./assets/project-1.png" alt="Project 1" class="project-img" />
-                    </div>
-                    <h2 class="experience-sub-title project-title">Project One</h2>
-                    <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">
-                            Github
-                        </button>
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">
-                            Live Demo
-                        </button>
-                    </div>
-                </div>
-                <div class="details-container color-container">
-                    <div class="article-container">
-                        <img src="./assets/project-2.png" alt="Project 2" class="project-img" />
-                    </div>
-                    <h2 class="experience-sub-title project-title">Project Two</h2>
-                    <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">
-                            Github
-                        </button>
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">
-                            Live Demo
-                        </button>
-                    </div>
-                </div>
-                <div class="details-container color-container">
-                    <div class="article-container">
-                        <img src="./assets/project-3.png" alt="Project 3" class="project-img" />
-                    </div>
-                    <h2 class="experience-sub-title project-title">Project Three</h2>
-                    <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">
-                            Github
-                        </button>
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">
-                            Live Demo
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
+        `;
+            projectsContainer.appendChild(projectElement);
+        });
+
+        // Initialize Magnific Popup for elements with class "project-image-popup"
+        $('.project-image-popup').magnificPopup({
+            type: 'image',
+            gallery: {
+                enabled: false
+            },
+            closeBtnInside: true,
+            mainClass: 'mfp-fade',
+            removalDelay: 300
+        });
+    </script>
+
+
     <script src="script.js"></script>
 </body>
+
 </html>
