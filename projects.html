@@ -87,73 +87,73 @@
     <h1 class="title mb-4">Projects</h1>
 
 
-    <div class="flex flex-wrap justify-center gap-7" id="projectsContainer"></div>
+    <div class="flex flex-wrap justify-center gap-7" id="projectsContainer">
 
-    <script>
-        var projectsData = [
-            {
-                "name": "E-Commerce App",
-                "imageURL": "./assets/thumbnails/4478112.png",
-                "githubURL": "#",
-                "demoURL": "#",
-                "technologies": ["Flutter", "Node JS", "Mongo DB"]
-            }, {
-                "name": "Random Chat & Dating",
-                "imageURL": "./assets/thumbnails/4478114.png",
-                "githubURL": "#",
-                "demoURL": "#",
-                "technologies": ["Flutter", "Node JS", "Mongo DB", "Socket IO", "WebRTC"]
-            }, {
-                "name": "Food Delivery App",
-                "imageURL": "./assets/thumbnails/4478115.png",
-                "githubURL": "#",
-                "demoURL": "#",
-                "technologies": ["React Native", "Node JS", "Mongo DB", "Redux"]
-            }, {
-                "name": "Papi Network",
-                "imageURL": "./assets/thumbnails/4478108.jpg",
-                "githubURL": "#",
-                "demoURL": "#",
-                "technologies": ["Android Studio", "Java", "Kotlin", "PHP", "MySQL"]
-            }, {
-                "name": "Khaya 265",
-                "imageURL": "./assets/thumbnails/4035050.jpg",
-                "githubURL": "#",
-                "demoURL": "#",
-                "technologies": ["Android Studio", "Java", "Firebase", "SQLite"]
-            }, {
-                "name": "Team Force",
-                "imageURL": "./assets/thumbnails/4036137.png",
-                "githubURL": "#",
-                "demoURL": "#",
-                "technologies": ["Android Studio", "Java", "PHP", "Firebase", "MySQL"]
-            }, {
-                "name": "JobsAlert",
-                "imageURL": "./assets/thumbnails/4118616.jpg",
-                "githubURL": "#",
-                "demoURL": "#",
-                "technologies": ["Android Studio", "Java", "Kotlin", "PHP", "MySQL"]
-            }, {
-                "name": "Waw Mobile App",
-                "imageURL": "./assets/thumbnails/4478101.jpg",
-                "githubURL": "#",
-                "demoURL": "#",
-                "technologies": ["Android Studio", "Java", "PHP", "MySQL"]
-            }, {
-                "name": "Universal App",
-                "imageURL": "./assets/thumbnails/4478102.png",
-                "githubURL": "#",
-                "demoURL": "#",
-                "technologies": ["Android Studio", "Java", "Firebase", "SQLite"]
-            }
-        ];
+        <script>
+            var projectsData = [
+                {
+                    "name": "E-Commerce App",
+                    "imageURL": "./assets/thumbnails/4478112.png",
+                    "githubURL": "#",
+                    "demoURL": "#",
+                    "technologies": ["Flutter", "Node JS", "Mongo DB"]
+                }, {
+                    "name": "Random Chat & Dating",
+                    "imageURL": "./assets/thumbnails/4478114.png",
+                    "githubURL": "#",
+                    "demoURL": "#",
+                    "technologies": ["Flutter", "Node JS", "Mongo DB", "Socket IO", "WebRTC"]
+                }, {
+                    "name": "Food Delivery App",
+                    "imageURL": "./assets/thumbnails/4478115.png",
+                    "githubURL": "#",
+                    "demoURL": "#",
+                    "technologies": ["React Native", "Node JS", "Mongo DB", "Redux"]
+                }, {
+                    "name": "Papi Network",
+                    "imageURL": "./assets/thumbnails/4478108.jpg",
+                    "githubURL": "#",
+                    "demoURL": "#",
+                    "technologies": ["Android Studio", "Java", "Kotlin", "PHP", "MySQL"]
+                }, {
+                    "name": "Khaya 265",
+                    "imageURL": "./assets/thumbnails/4035050.jpg",
+                    "githubURL": "#",
+                    "demoURL": "#",
+                    "technologies": ["Android Studio", "Java", "Firebase", "SQLite"]
+                }, {
+                    "name": "Team Force",
+                    "imageURL": "./assets/thumbnails/4036137.png",
+                    "githubURL": "#",
+                    "demoURL": "#",
+                    "technologies": ["Android Studio", "Java", "PHP", "Firebase", "MySQL"]
+                }, {
+                    "name": "JobsAlert",
+                    "imageURL": "./assets/thumbnails/4118616.jpg",
+                    "githubURL": "#",
+                    "demoURL": "#",
+                    "technologies": ["Android Studio", "Java", "Kotlin", "PHP", "MySQL"]
+                }, {
+                    "name": "Waw Mobile App",
+                    "imageURL": "./assets/thumbnails/4478101.jpg",
+                    "githubURL": "#",
+                    "demoURL": "#",
+                    "technologies": ["Android Studio", "Java", "PHP", "MySQL"]
+                }, {
+                    "name": "Universal App",
+                    "imageURL": "./assets/thumbnails/4478102.png",
+                    "githubURL": "#",
+                    "demoURL": "#",
+                    "technologies": ["Android Studio", "Java", "Firebase", "SQLite"]
+                }
+            ];
 
-        var projectsContainer = document.getElementById("projectsContainer");
+            var projectsContainer = document.getElementById("projectsContainer");
 
-        projectsData.forEach(function (project) {
-            var projectElement = document.createElement("div");
-            projectElement.className = "w-80 max-w-md overflow-hidden rounded-3xl border-2 border-[#A3A3A3] bg-[#FAFAFA]";
-            projectElement.innerHTML = `
+            projectsData.forEach(function (project) {
+                var projectElement = document.createElement("div");
+                projectElement.className = "w-80 max-w-md overflow-hidden rounded-3xl border-2 border-[#A3A3A3] bg-[#FAFAFA]";
+                projectElement.innerHTML = `
             <div class="flex items-center justify-center p-8">
                 <a href="${project.imageURL}" class="project-image-popup">
 
@@ -172,20 +172,20 @@
                 ${project.technologies.map(tech => `<div class="mx-2 my-[2px] font-bold flex items-center justify-center rounded-full border bg-[#353535] px-3 py-1 text-[11px] text-white">${tech}</div>`).join('')}
             </div>
         `;
-            projectsContainer.appendChild(projectElement);
-        });
+                projectsContainer.appendChild(projectElement);
+            });
 
-        $('.project-image-popup').magnificPopup({
-            type: 'image',
-            gallery: {
-                enabled: false
-            },
-            closeBtnInside: true,
-            mainClass: 'mfp-fade',
-            removalDelay: 300
-        });
-    </script>
-
+            $('.project-image-popup').magnificPopup({
+                type: 'image',
+                gallery: {
+                    enabled: false
+                },
+                closeBtnInside: true,
+                mainClass: 'mfp-fade',
+                removalDelay: 300
+            });
+        </script>
+    </div>
 
     <script src="script.js"></script>
 </body>

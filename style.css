@@ -453,6 +453,80 @@ footer p {
   text-align: center;
 }
 
+.mb-7 {
+  margin-bottom: 22px;
+}
+
 .see-more-link {
   text-align: end;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.px-9 {
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+}
+
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.my-2px {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.flex.items-center {
+  align-items: center;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.border {
+  border-width: 1px;
+  border-style: solid;
+}
+
+.bg-dark-gray {
+  background-color: #353535;
+}
+
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.text-11px {
+  font-size: 11px;
+}
+
+.text-white {
+  color: white;
 }
