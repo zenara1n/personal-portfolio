@@ -41,7 +41,7 @@ Hello, I'm **Zain Ul Abideen**, a passionate Full-Stack Developer with over 3 ye
 - MongoDB
 
 ## Browse My Recent Projects
-- **View here:** [Portfolio](https://zenara1n.github.io/personal-portfolio/)
+- **View here:** [Portfolio](https://zenara1n.github.io/personal-portfolio/projects.html)
 
 ## Get in Touch
 
